@@ -4,11 +4,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="modals.php">
     <title>Home | Paesano</title>
 </head>
 <body>
-  <div class="container">
+  <div class="container-fluid sticky-navbar">
     <nav class="navbar">
       <a href="index.php"><img src="img/paesano_logo.jpg"></a>
       <ul class="nav-item">
@@ -23,121 +28,78 @@
     </nav>
   </div>
 
-<!-- The Modal -->
-<div class="modal" id="modal1">
-  <!-- Modal content -->
-  <div class="modal-content">
-    <span class="close">&times;</span>
-    <p>Some text in the Modal..</p>
-  </div>
-</div>
-<div class="modal" id="modal2">
-    <!-- Modal content -->
-    <div class="modal-content">
-      <span class="close">&times;</span>
-      <p>Some text in the Modal..</p>
-    </div>
-  </div>
-  <div class="modal" id="modal3">
-    <!-- Modal content -->
-    <div class="modal-content">
-      <span class="close">&times;</span>
-      <p>Some text in the Modal..</p>
-    </div>
-  </div>
-<div class="product">
+  <!-- The Modal -->
+  <?php include 'modals.php'; ?>
+
+
+  <!-----Products------>
+
+  <div class="product">
     <section class="divs">
-    <h1>Candon Barbers</h1>
-    <p class="barber-description">Paesano</p>
-    <div class="row">
+      <h1>Candon City Barbers</h1>
+      <p class="barber-description">Paesano</p>
+      <div class="row">
         <div class="cup">
-            <img src="img/img3.jpg">
-            <div class="layer">
-                <a href="#" id="modalLink1"><h3>Barbers 1</h3></a>
-            </div>
+          <img src="img/img3.jpg">
+          <div class="layer">
+            <a href="#" data-toggle="modal" data-target="#barber1"><h3>Barbers 1</h3></a>
+          </div>
         </div>
 
         <div class="cup">
-            <img src="img/img3.jpg">
-            <div class="layer">
-                <a href="#" id="modalLink2"><h3>Barbers 2</h3></a>
-            </div>
+          <img src="img/img3.jpg">
+          <div class="layer">
+            <a href="#" data-toggle="modal" data-target="#barber2"><h3>Barbers 2</h3></a>
+          </div>
         </div>
 
         <div class="cup">
-            <img src="img/img3.jpg">
-            <div class="layer">
-                <a href="#" id="modalLink1"><h3>Barbers 1</h3></a>
-            </div>
+          <img src="img/img3.jpg">
+          <div class="layer">
+            <a href="#" data-toggle="modal" data-target="#barber3"><h3>Barbers 3</h3></a>
+          </div>
         </div>
+      </div>
+    </section>
+  </div>
 
-    </div>
-</section>
-</div>
-
-<div class="product">
+  <div class="product">
     <section class="divs">
-    <h1>Sta. Lucia Barbers</h1>
-    <p class="barber-description">Paesano</p>
-    <div class="row">
+      <h1>Sta. Lucia Barbers</h1>
+      <p class="barber-description">Paesano</p>
+      <div class="row">
         <div class="cup">
-            <img src="img/img3.jpg">
-            <div class="layer">
-                <a href="#" id="modalLink1"><h3>Barbers 1</h3></a>
-            </div>
+          <img src="img/img3.jpg">
+          <div class="layer">
+            <a href="#" data-toggle="modal" data-target="#barber4"><h3>Barbers 4</h3></a>
+          </div>
         </div>
 
         <div class="cup">
-            <img src="img/img3.jpg">
-            <div class="layer">
-                <a href="#" id="modalLink2"><h3>Barbers 2</h3></a>
-            </div>
+          <img src="img/img3.jpg">
+          <div class="layer">
+            <a href="#" data-toggle="modal" data-target="#barber5"><h3>Barbers 5</h3></a>
+          </div>
         </div>
 
         <div class="cup">
-            <img src="img/img3.jpg">
-            <div class="layer">
-                <a href="#" id="modalLink2"><h3>Barbers 2</h3></a>
-            </div>
+          <img src="img/img3.jpg">
+          <div class="layer">
+            <a href="#" data-toggle="modal" data-target="#barber6"><h3>Barbers 6</h3></a>
+          </div>
         </div>
+      </div>
+    </section>
+  </div>
 
-    </div>
-</section>
-</div>
-<script>
-  // Function to open the modal for the clicked coffee item
-  function openModal(index) {
-    document.querySelectorAll(".modal")[index].style.display = "block";
-  }
+  <!-- Include Bootstrap JS (jQuery and Popper.js are also required) -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-  // Function to close the modal for the clicked coffee item
-  function closeModal(index) {
-    document.querySelectorAll(".modal")[index].style.display = "none";
-  }
-
-  // Event listeners for each coffee item's button
-  document.querySelectorAll("[id^='modalLink']").forEach(function (button, index) {
-    button.onclick = function () {
-      openModal(index);
-    };
-  });
-
-  // Event listeners for each modal's close button
-  document.querySelectorAll(".close").forEach(function (closeBtn, index) {
-    closeBtn.onclick = function () {
-      closeModal(index);
-    };
-  });
-
-  // Event listener to close the modal when clicking outside of it
-  window.onclick = function(event) {
-    document.querySelectorAll(".modal").forEach(function (modal, index) {
-      if (event.target == modal) {
-        closeModal(index);
-      }
-    });
-  };
-</script>
-<script src="main.js"></script>
+  <script>
+    // You can keep your JavaScript code for opening and closing the modal here.
+  </script>
+  <script src="main.js"></script>
 </body>
 </html>

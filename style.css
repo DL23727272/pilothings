@@ -16,18 +16,24 @@ body{
     width: 100%;
     font-family: 'Poppins', sans-serif;
     background:  white; 
+    padding-left: 0;
+    padding-right: 0;
     z-index: 9999;
-    position: -webkit-sticky; /* Safari */
+}
+
+.sticky-navbar {
+    z-index: 9999;
+    position: -webkit-sticky;
     position: sticky;
     top: 0;
 }
 
 .navbar{
-    height: 70px;
+    height: 80px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 50px 70px;
+    background: white;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
 .nav-item{
@@ -204,7 +210,9 @@ nav img{
     font-size: 28px;
     font-weight: bold;
   }
-  
+  .modal {
+    z-index: 10000; /* Adjust the value as needed */
+  }
   .close:hover,
   .close:focus {
     color: black;
@@ -213,9 +221,6 @@ nav img{
   }
   
 @media(min-width: 300px) and (max-width: 700px){
-    .hamburger{
-        display: block;
-    }
 
     .hamburger.active .bar:nth-child(2){
         opacity: 0;
@@ -269,6 +274,26 @@ nav img{
         width: 96.5vw;
         height: 40vh;   
         
+    }
+    .navbar ul.nav-item {
+        display: none;
+        flex-direction: column;
+        background-color: #333; /* Background color for the mobile menu */
+        position: absolute;
+        top: 60px; /* Adjust the top position to match your header's height */
+        right: 0;
+        width: 100%;
+    }
+    .navbar ul.nav-item.active {
+        display: flex;
+    }
+    .hamburger {
+        display: block;
+        cursor: pointer;
+        position: absolute;
+        top: 15px;
+        right: 20px;
+        z-index: 2;
     }
    
 }
