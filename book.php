@@ -1,13 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book | Paesano</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-    <title>Home | Paesano</title>
-    <script src="jquery-3.6.1.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
         #img{
@@ -19,55 +17,7 @@
             width: 500px;
             height: 400px;
         }
-
-        body{
-            overflow-x: hidden;
-            overflow-y: auto;
-            margin: 0;
-            padding: 0;
-        }
-
-        #slider {
-            width: 100%; /* Adjust the width as needed */
-            height: 400px; /* Adjust the height as needed */
-            display: flex;
-            overflow: hidden;
-        }
-
-        .slide {
-            min-width: 100%;
-            transition: transform 1.1s ease-in-out; /* Changed from opacity to transform for smooth sliding */
-        }
-
-        .slide img {
-            width: 600px;
-            height: 400px;
-        }
-        .nav-link{
-            cursor: pointer;
-        }
     </style>
-  
-    <script>
-       var currentImage = 1;
-
-        function showNextImage() {
-        // Slide to the next image
-        $('#slider').animate({ scrollLeft: currentImage * $('.slide').width() }, 1100, function() {
-                // Get the next image index (cycling back to the first image if needed)
-                currentImage = (currentImage % 3) + 1;
-            });
-        }
-
-        $(document).ready(function() {
-            // Show the first image initially
-            currentImage = 1;
-
-            // Set the interval to change the image every 3000ms (3 seconds)
-            setInterval(showNextImage, 3000);
-        });
-    </script>
-
 </head>
 <body>
 
@@ -83,74 +33,72 @@
       <div class="navbar-nav">
         <a class="nav-link active" aria-current="page" href="index.php">Home</a>
         <a class="nav-link" href="book.php">Book</a>
-        <a class="nav-link" data-bs-toggle="modal" data-bs-target="#login">Log-in</a>
       </div>
     </div>
   </div>
 </nav>
 
-<!--Main Content-->
-<div class="container-sm d-sm-flex flex-sm-column flex-md-row align-items-md-center">
-    <div class="p-2">
-        <h1 class="h1">Welcome to Paesano Barber Shop – Where Style Meets Tradition! </h1>
-        <p class="lead mt-3 mb-3">Step into a world of timeless grooming and a blend of contemporary trends at Paesano Barber Shop. We're not just a barber shop; we're a destination for the modern gentleman seeking the perfect grooming experience. Discover the artistry of our skilled barbers and immerse yourself in an ambiance that exudes sophistication and classic charm.</p>
-        <div class="d-sm-flex flex-sm-column flex-md-row justify-content-sm-around justify-content-md-start">
-            <div class="m-2"><i class="fa-brands fa-2xl fa-square-twitter" style="color: #0D6EFD"></i> <a href="#" class="link-underline-dark link-dark link-offset-2">Twitter</a></div>
-            <div class="m-2"><i class="fa-brands fa-2xl fa-square-facebook" style="color: #0D6EFD"></i> <a href="#" class="link-underline-dark link-dark link-offset-2">Facebook</a></div>
-            <div class="m-2"><i class="fa-brands fa-2xl fa-square-instagram" style="color: #0D6EFD"></i> <a href="#" class="link-underline-dark link-dark link-offset-2">Instagram</a></div>
-        </div>
-    </div>
-    <div class="p-2">
-        <section class="banner">
-            <div id="slider">
-                <div class="slide">
-                    <img src="img/img1.jpg" class="img-thumbnail img-fluid shadow-lg p-3 mb-5 bg-body-tertiary rounded">
-                    <div class="slidertitle" id="title1"></div>
-                </div>
-
-                <div class="slide">
-                    <img src="img/img2.jpg" class="img-thumbnail img-fluid shadow-lg p-3 mb-5 bg-body-tertiary rounded">
-                    <div class="slidertitle" id="title2"></div>
-                </div>
-
-                <div class="slide">
-                <img src="img/img3.jpg" class="img-thumbnail img-fluid shadow-lg p-3 mb-5 bg-body-tertiary rounded">
-                    <div class="slidertitle" id="title3"></div>
-                </div>
-            </div>
-        </section>
-    </div>
-</div>
-
-    </div>
-</div>
+<!--Modal-->
+<?php include 'modals.php'; ?>
 
 <div class="d-sm-flex flex-column container-sm mt-5 mb-5">
     <div class="p-2">
-        <h1 class="h1">✂️ Book Your Appointment – Unleash Your Style! </h1>
-        <p class="lead mt-3 mb-3">
+        <h1 class="h1">✂️ Book Your Appointment – Unleash Your Style! ✂️</h1>
+        <p class="lead">
         Ready to elevate your grooming game? Booking an appointment at Paesano Barber Shop is a breeze. Simply select a date and time that suits you best, and let our master barbers work their magic.
         </p>
     </div>
-    <div class="d-sm-flex flex-sm-column flex-md-row flex-lg-row justify-content-sm-center justify-content-md-around">
+    <div class="container-sm">
+        <div class="row row-cols-sm-2 row-cols-md-4 justify-content-sm-center">
         <div class="card m-2">
+            <img src="img/img3.jpg" class="card-img-top img-fluid" alt="...">
             <div class="card-body">
-                <h5 class="card-title"><i class="fa-solid fa-burst" style="color: #0D6EFD"></i> Classic Ambiance: </h5>
-                <p class="card-text">Immerse yourself in our welcoming, classy atmosphere that harks back to the golden age of barbershops.</p>
+                <h5 class="card-title">Arwen</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#barber1">Barber 1</button>
             </div>
         </div>
         <div class="card m-2">
+            <img src="img/img3.jpg" class="card-img-top img-fluid" alt="...">
             <div class="card-body">
-                <h5 class="card-title"><i class="fa-solid fa-handshake-simple" style="color: #0D6EFD"></i> Expert Barbers:</h5>
-                <p class="card-text">Our seasoned barbers are skilled in the latest trends and traditional techniques, ensuring you get the perfect cut every time.</p>
+                <h5 class="card-title">Barber 2</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#barber2">Barber 2</button>
             </div>
         </div>
         <div class="card m-2">
+            <img src="img/img3.jpg" class="card-img-top img-fluid" alt="...">
             <div class="card-body">
-                <h5 class="card-title"><i class="fa-solid fa-person-circle-check" style="color: #0D6EFD"></i> Tailored Services:</h5>
-                <p class="card-text"> From haircuts to shaves, we tailor our services to meet your unique grooming preferences and style.</p>
+                <h5 class="card-title">Ramil</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#barber3">Barber 3</button>
             </div>
         </div>
+        <div class="card m-2">
+            <img src="img/img3.jpg" class="card-img-top img-fluid" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Barber 4</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#barber4">Barber 4</button>
+            </div>
+        </div>
+        <div class="card m-2">
+            <img src="img/img3.jpg" class="card-img-top img-fluid" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Barber 5</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#barber5">Barber 5</button>
+            </div>
+        </div>
+        <div class="card m-2">
+            <img src="img/img3.jpg" class="card-img-top img-fluid" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Barber 6</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#barber6">Barber 6</button>
+            </div>
+        </div>
+    </div>
     </div>
 </div>
 
@@ -162,7 +110,7 @@
             <div><img src="img/paesano_logo.jpg" id="img" class="rounded"/></div>
             <div><h1 class="fs-5">Paesano</h1></div>
         </div>
-        <div class="d-sm-flex flex-sm-row flex-md-column">
+        <div class="d-sm-flex d-md-flex flex-sm-row flex-md-column">
             <div class="">
                 <div class="mx-4 d-sm-flex d-md-flex flex-sm-row flex-md-row align-items-sm-center align-items-md-center">
                     <i class="fa-solid fa-home fa-xl mb-2"></i>
@@ -214,6 +162,7 @@
         </div>
     </div>
 </div>
+
 
 </body>
 </html>
