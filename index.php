@@ -70,6 +70,7 @@
 
 </head>
 <body>
+<?php include 'modals.php'; ?>
 
 <!--Navbar-->
 
