@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 24, 2023 at 02:57 PM
+-- Generation Time: Sep 26, 2023 at 05:00 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -24,10 +24,29 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `arwen`
+-- Table structure for table `admin`
 --
 
-CREATE TABLE `arwen` (
+CREATE TABLE `admin` (
+  `id` int(11) NOT NULL,
+  `name` varchar(30) NOT NULL,
+  `password` varchar(100) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `admin`
+--
+
+INSERT INTO `admin` (`id`, `name`, `password`) VALUES
+(1, 'Arwen', '0e43e12703cafa17ac09e4d0899c5a21');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `allen`
+--
+
+CREATE TABLE `allen` (
   `id` int(11) NOT NULL,
   `checkin_date` date NOT NULL,
   `checkin_time` time NOT NULL,
@@ -37,10 +56,10 @@ CREATE TABLE `arwen` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `barber2`
+-- Table structure for table `arwen`
 --
 
-CREATE TABLE `allen` (
+CREATE TABLE `arwen` (
   `id` int(11) NOT NULL,
   `checkin_date` date NOT NULL,
   `checkin_time` time NOT NULL,
@@ -65,15 +84,21 @@ CREATE TABLE `ramil` (
 --
 
 --
--- Indexes for table `arwen`
+-- Indexes for table `admin`
 --
-ALTER TABLE `arwen`
+ALTER TABLE `admin`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `barber2`
+-- Indexes for table `allen`
 --
 ALTER TABLE `allen`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `arwen`
+--
+ALTER TABLE `arwen`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -87,15 +112,21 @@ ALTER TABLE `ramil`
 --
 
 --
--- AUTO_INCREMENT for table `arwen`
+-- AUTO_INCREMENT for table `admin`
 --
-ALTER TABLE `arwen`
+ALTER TABLE `admin`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `allen`
+--
+ALTER TABLE `allen`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `barber2`
+-- AUTO_INCREMENT for table `arwen`
 --
-ALTER TABLE `allen`
+ALTER TABLE `arwen`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
