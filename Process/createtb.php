@@ -3,10 +3,10 @@
     $hostname = "localhost";
     $username = "root";
     $password = "";
-    $database = "web_db";
-    $email = "";
+    $database = "paesano";
+  
 
-    $connect = mysqli_connect($hostname, $email, $username, $password, $database);
+    $connect = mysqli_connect($hostname, $username, $password, $database);
     
     if($connect){
         echo "Connection to MySQL successful<br>";
@@ -15,9 +15,8 @@
         echo "Connection to MySQL failed". mysqli_connect_error();
     }
 
-    $query = "CREATE TABLE hotel(
+    $query = "CREATE TABLE admin(
         id INT PRIMARY KEY AUTO_INCREMENT,
-        email VARCHAR(100),
         name VARCHAR(30) NOT NULL,
         password VARCHAR(100)
     )";

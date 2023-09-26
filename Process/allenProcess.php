@@ -6,12 +6,12 @@ if (isset($_POST['fname']) && isset($_POST['dateIn']) && isset($_POST['timeIn'])
     $CheckInDate = $_POST["dateIn"];
     $CheckInTime = $_POST["timeIn"];
    
-    $query = "INSERT INTO arwen (checkin_date, checkin_time, name) VALUES ('$CheckInDate', '$CheckInTime', '$fname')";
+    $query = "INSERT INTO allen (checkin_date, checkin_time, name) VALUES ('$CheckInDate', '$CheckInTime', '$fname')";
    
     if(mysqli_query($connect, $query)){
         $response = [
             'status' => 'success',
-            'message' => 'Booked to Arwen successfully'
+            'message' => 'Booked to Allen successfully'
         ];
     } else {
         $response = [

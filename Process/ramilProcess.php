@@ -1,37 +1,33 @@
 <?php
-    
-    include "myConnection.php";
+include "myConnection.php";
 
+if (isset($_POST['fname']) && isset($_POST['dateIn']) && isset($_POST['timeIn'])) {
     $fname = $_POST['fname'];
     $CheckInDate = $_POST["dateIn"];
     $CheckInTime = $_POST["timeIn"];
-  
    
-    
-    $query = "INSERT INTO ramil ( checkin_date, checkin_time, name)
-             VALUE ('$CheckInDate', '$CheckInTime', '$fname')";
+    $query = "INSERT INTO ramil (checkin_date, checkin_time, name) VALUES ('$CheckInDate', '$CheckInTime', '$fname')";
+   
+    if(mysqli_query($connect, $query)){
+        $response = [
+            'status' => 'success',
+            'message' => 'Booked to ramil successfully'
+        ];
+    } else {
+        $response = [
+            'status' => 'error',
+            'message' => 'Failed to add record: ' . mysqli_error($connect)
+        ];
+    }
+    mysqli_close($connect);
+} else {
+    $response = [
+        'status' => 'error',
+        'message' => 'All fields are mandatory'
+    ];
+}
 
-   
-   
-        if(mysqli_query($connect, $query)){
-            echo "New record added successfully";
-        }
-        else{
-            echo "Empty Details <br>". mysqli_error($connect);
-        }
-        mysqli_close($connect);
+
+header('Content-Type: application/json');
+echo json_encode($response);
 ?>
-<html>
-    <head>
-    <script type="text/javascript">
-            var yes = confirm("Book successfully");
-            
-            if (yes) {
-                window.location.replace("/finalAppointment/book.php");
-            }
-            else{
-                document.write("Please reload the Page");
-            }
-        </script>
-    </head>
-</html>

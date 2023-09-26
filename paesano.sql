@@ -40,7 +40,7 @@ CREATE TABLE `arwen` (
 -- Table structure for table `barber2`
 --
 
-CREATE TABLE `barber2` (
+CREATE TABLE `allen` (
   `id` int(11) NOT NULL,
   `checkin_date` date NOT NULL,
   `checkin_time` time NOT NULL,
@@ -73,7 +73,7 @@ ALTER TABLE `arwen`
 --
 -- Indexes for table `barber2`
 --
-ALTER TABLE `barber2`
+ALTER TABLE `allen`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -95,7 +95,7 @@ ALTER TABLE `arwen`
 --
 -- AUTO_INCREMENT for table `barber2`
 --
-ALTER TABLE `barber2`
+ALTER TABLE `allen`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
