@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 26, 2023 at 05:00 PM
+-- Generation Time: Sep 27, 2023 at 04:25 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -50,8 +50,16 @@ CREATE TABLE `allen` (
   `id` int(11) NOT NULL,
   `checkin_date` date NOT NULL,
   `checkin_time` time NOT NULL,
-  `name` varchar(255) NOT NULL
+  `name` varchar(255) NOT NULL,
+  `service_type` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `allen`
+--
+
+INSERT INTO `allen` (`id`, `checkin_date`, `checkin_time`, `name`, `service_type`) VALUES
+(1, '2023-09-27', '23:40:00', 'secondTest', 'Shave');
 
 -- --------------------------------------------------------
 
@@ -63,8 +71,16 @@ CREATE TABLE `arwen` (
   `id` int(11) NOT NULL,
   `checkin_date` date NOT NULL,
   `checkin_time` time NOT NULL,
-  `name` varchar(255) NOT NULL
+  `name` varchar(255) NOT NULL,
+  `service_type` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `arwen`
+--
+
+INSERT INTO `arwen` (`id`, `checkin_date`, `checkin_time`, `name`, `service_type`) VALUES
+(1, '2023-09-27', '22:40:00', 'firstTest', 'Haircut');
 
 -- --------------------------------------------------------
 
@@ -76,8 +92,17 @@ CREATE TABLE `ramil` (
   `id` int(11) NOT NULL,
   `checkin_date` date NOT NULL,
   `checkin_time` time NOT NULL,
-  `name` varchar(255) NOT NULL
+  `name` varchar(255) NOT NULL,
+  `service_type` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `ramil`
+--
+
+INSERT INTO `ramil` (`id`, `checkin_date`, `checkin_time`, `name`, `service_type`) VALUES
+(1, '2023-09-27', '23:41:00', 'thirdTest', 'Hair styling'),
+(2, '2023-09-27', '23:41:00', 'thirdTest', 'Hair styling');
 
 --
 -- Indexes for dumped tables
@@ -121,19 +146,19 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `allen`
 --
 ALTER TABLE `allen`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `arwen`
 --
 ALTER TABLE `arwen`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `ramil`
 --
 ALTER TABLE `ramil`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

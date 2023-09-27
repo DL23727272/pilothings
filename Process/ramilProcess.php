@@ -1,17 +1,19 @@
 <?php
 include "myConnection.php";
 
-if (isset($_POST['fname']) && isset($_POST['dateIn']) && isset($_POST['timeIn'])) {
+if (isset($_POST['fname']) && isset($_POST['dateIn']) && isset($_POST['timeIn']) && isset($_POST['serviceType'])) {
     $fname = $_POST['fname'];
     $CheckInDate = $_POST["dateIn"];
     $CheckInTime = $_POST["timeIn"];
+    $serviceType = $_POST["serviceType"]; 
    
-    $query = "INSERT INTO ramil (checkin_date, checkin_time, name) VALUES ('$CheckInDate', '$CheckInTime', '$fname')";
+    $query = "INSERT INTO ramil (checkin_date, checkin_time, name, service_type) 
+                VALUES ('$CheckInDate', '$CheckInTime', '$fname', '$serviceType')";
    
     if(mysqli_query($connect, $query)){
         $response = [
             'status' => 'success',
-            'message' => 'Booked to ramil successfully'
+            'message' => 'Booked to Ramil successfully'
         ];
     } else {
         $response = [
@@ -26,7 +28,6 @@ if (isset($_POST['fname']) && isset($_POST['dateIn']) && isset($_POST['timeIn'])
         'message' => 'All fields are mandatory'
     ];
 }
-
 
 header('Content-Type: application/json');
 echo json_encode($response);
