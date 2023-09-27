@@ -251,7 +251,7 @@
   </div>
 
    <!---LOG IN--->
- <div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="ModalCenterTitle" aria-hidden="true">
+ <div class="modal fade" id="logIn" tabindex="-1" role="dialog" aria-labelledby="ModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -259,7 +259,7 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <form class="form" action="Process/signupProcess.php" method="post">
+          <form class="form" action="Process/loginPRocess.php" method="post">
             <h1>Log-in</h1>
 
             <div class="form-group">

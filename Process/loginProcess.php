@@ -1,20 +1,43 @@
 <?php
-    include "myConnection.php";
+session_start(); 
 
-    $username = $_POST["username"];
-    $password = md5($_POST["password"]);
+include "myConnection.php";
 
-    $query = "SELECT * FROM admin WHERE name = '$username' && password = '$password'";
+if (isset($_POST['username']) && isset($_POST['password'])) {
+    $name = $_POST["username"];
+    $password = $_POST["password"];
+    $passwordEncrypt = md5($password);
+
+
+    $query = "SELECT * FROM admin WHERE name = '$name' AND password = '$passwordEncrypt'";
     $result = mysqli_query($connect, $query);
-    $row = mysqli_fetch_assoc($result);
 
-    if($row['name'] == "$username" && $row['password'] == "$password"){
-        header("Location:book.php");
+    if (mysqli_num_rows($result) == 1) {
+     
+        $_SESSION['admin_logged_in'] = true;
+    
+       
+        echo "Redirecting to admin/admin.php...";
+    
+       
+        mysqli_close($connect);
+        header('Location: ../admin/admin.php');
+        exit; 
+    } else {
+        $response = [
+            'status' => 'error',
+            'message' => 'Invalid username or password'
+        ];
     }
+    
+    mysqli_close($connect);
+} else {
+    $response = [
+        'status' => 'error',
+        'message' => 'All fields are mandatory'
+    ];
+}
 
-    else{
-        echo "<script>alert('Please Sign up to Login'); window.location = 'signup.php';</script>";
-
-    }
-
+header('Content-Type: application/json');
+echo json_encode($response);
 ?>

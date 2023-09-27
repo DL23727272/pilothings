@@ -1,4 +1,5 @@
 <?php
+session_start();
 include 'D:\xampp\htdocs\Appointment\Process\myConnection.php';
 
 function totalAppoitments($connect, $barberName) {
@@ -77,6 +78,9 @@ function displayAppointments($connect, $barberName) {
         <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" ></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"></script>
+          <!-- Alertify sakit sa ulo -->
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css"/>
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/bootstrap.min.css"/>
     
         <style>
             table{
@@ -159,6 +163,11 @@ function displayAppointments($connect, $barberName) {
                 displayAppointments($connect, "ramil");
             ?>
                         
-       
+        <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script>
+             alertify.set('notifier','position', 'top-right');
+    alertify.success('Welcome, admin!' );
+        </script>
     </body>
 </html>

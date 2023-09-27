@@ -84,7 +84,7 @@
       <div class="navbar-nav">
         <a class="nav-link active" aria-current="page" href="index.php">Home</a>
         <a class="nav-link" href="book.php">Book</a>
-        <a class="nav-link" data-bs-toggle="modal" data-bs-target="#login">Log-in</a>
+        <a class="nav-link" data-bs-toggle="modal" data-bs-target="#logIn">Log-in</a>
       </div>
     </div>
   </div>
