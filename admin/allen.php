@@ -74,7 +74,7 @@
             
             $currentDate = date("Y-m-d");
 
-            $query = "SELECT * FROM arwen WHERE checkin_date = '$currentDate'";
+            $query = "SELECT * FROM allen WHERE checkin_date = '$currentDate'";
             $result = mysqli_query($connect, $query);
 
             $totalAppointmentsToday = mysqli_num_rows($result);

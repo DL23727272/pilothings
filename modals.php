@@ -28,13 +28,15 @@
             <div class="input-group input-group-sm mb-3">
               <label class="input-group-text" for="inputGroupSelect01">Select Services: </label>
               <select class="form-select" id="inputGroupSelect01" name="serviceType">
-                <option selected>Choose services availbale.....</option>
-                  <option value="Haircut">Haircut</option>
-                  <option value="Shave">Shave</option>
-                  <option value="Beard Trim">Beard Trim</option>
-                  <option value="Hair styling">Hair styling</option>
+                <option disabled selected value="">Choose a service...</option>
+                <option value="Haircut">Haircut</option>
+                <option value="Shave">Shave</option>
+                <option value="Beard Trim">Beard Trim</option>
+                <option value="Hair styling">Hair styling</option>
               </select>
             </div>
+
+
 
           </div>
           <div class="modal-footer">
@@ -76,11 +78,11 @@
             <div class="input-group input-group-sm mb-3">
               <label class="input-group-text" for="inputGroupSelect01">Select Services: </label>
               <select class="form-select" id="inputGroupSelect01" name="serviceType">
-                <option selected>Choose services availbale.....</option>
-                  <option value="Haircut">Haircut</option>
-                  <option value="Shave">Shave</option>
-                  <option value="Beard Trim">Beard Trim</option>
-                  <option value="Hair styling">Hair styling</option>
+                <option disabled selected value="">Choose a service...</option>
+                <option value="Haircut">Haircut</option>
+                <option value="Shave">Shave</option>
+                <option value="Beard Trim">Beard Trim</option>
+                <option value="Hair styling">Hair styling</option>
               </select>
             </div>
 
@@ -124,11 +126,11 @@
             <div class="input-group input-group-sm mb-3">
               <label class="input-group-text" for="inputGroupSelect01">Select Services: </label>
               <select class="form-select" id="inputGroupSelect01" name="serviceType">
-                <option selected>Choose services availbale.....</option>
-                  <option value="Haircut">Haircut</option>
-                  <option value="Shave">Shave</option>
-                  <option value="Beard Trim">Beard Trim</option>
-                  <option value="Hair styling">Hair styling</option>
+                <option disabled selected value="">Choose a service...</option>
+                <option value="Haircut">Haircut</option>
+                <option value="Shave">Shave</option>
+                <option value="Beard Trim">Beard Trim</option>
+                <option value="Hair styling">Hair styling</option>
               </select>
             </div>
 
@@ -259,7 +261,7 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <form class="form" action="Process/loginPRocess.php" method="post">
+          <form class="form" action="Process/loginProcess.php" method="post">
             <h1>Log-in</h1>
 
             <div class="form-group">
