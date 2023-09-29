@@ -16,8 +16,17 @@
             </div>
 
             <div class="input-group input-group-sm mb-3">
-              <span class="input-group-text" id="inputGroup-sizing-sm">Check-in Time</span>
-              <input type="time" id="chkt" name="timeIn" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" required>
+              <label class="input-group-text" for="inputGroupSelect01">Check-in Time (Hour)</label>
+              <select class="form-select" id="inputGroupSelect01" name="timeIn">
+                <option disabled selected value="">Choose an hour...</option>
+                <option value="09:00:00">9:00 AM</option>
+                <option value="10:00:00">10:00 AM</option>
+                <option value="11:00:00">11:00 AM</option>
+                <option value="13:00:00">1:00 PM</option>
+                <option value="14:00:00">2:00 PM</option>
+                <option value="15:00:00">3:00 PM</option>
+                <option value="16:00:00">4:00 PM</option>
+              </select>
             </div>
 
             <div class="input-group input-group-sm mb-3">
@@ -35,8 +44,6 @@
                 <option value="Hair styling">Hair styling</option>
               </select>
             </div>
-
-
 
           </div>
           <div class="modal-footer">
@@ -66,8 +73,17 @@
             </div>
 
             <div class="input-group input-group-sm mb-3">
-              <span class="input-group-text" id="inputGroup-sizing-sm">Check-in Time</span>
-              <input type="time" id="chkt" name="timeIn" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" required>
+              <label class="input-group-text" for="inputGroupSelect01">Check-in Time (Hour)</label>
+              <select class="form-select" id="inputGroupSelect01" name="timeIn">
+                <option disabled selected value="">Choose an hour...</option>
+                <option value="09:00:00">9:00 AM</option>
+                <option value="10:00:00">10:00 AM</option>
+                <option value="11:00:00">11:00 AM</option>
+                <option value="13:00:00">1:00 PM</option>
+                <option value="14:00:00">2:00 PM</option>
+                <option value="15:00:00">3:00 PM</option>
+                <option value="16:00:00">4:00 PM</option>
+              </select>
             </div>
 
             <div class="input-group input-group-sm mb-3">
@@ -114,8 +130,17 @@
             </div>
 
             <div class="input-group input-group-sm mb-3">
-              <span class="input-group-text" id="inputGroup-sizing-sm">Check-in Time</span>
-              <input type="time" id="chkt" name="timeIn" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" required>
+              <label class="input-group-text" for="inputGroupSelect01">Check-in Time (Hour)</label>
+              <select class="form-select" id="inputGroupSelect01" name="timeIn">
+                <option disabled selected value="">Choose an hour...</option>
+                <option value="09:00:00">9:00 AM</option>
+                <option value="10:00:00">10:00 AM</option>
+                <option value="11:00:00">11:00 AM</option>
+                <option value="13:00:00">1:00 PM</option>
+                <option value="14:00:00">2:00 PM</option>
+                <option value="15:00:00">3:00 PM</option>
+                <option value="16:00:00">4:00 PM</option>
+              </select>
             </div>
 
             <div class="input-group input-group-sm mb-3">
@@ -261,7 +286,7 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <form class="form" action="Process/loginProcess.php" method="post">
+          <form class="form" id="logInForm" action="Process/loginProcess.php" method="post">
             <h1>Log-in</h1>
 
             <div class="form-group">

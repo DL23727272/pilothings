@@ -215,6 +215,30 @@
         </div>
     </div>
 </div>
+<script>
+     // Log In Form Submit
+     $("#loginForm").submit(function (event) {
+            event.preventDefault();
+            var formData = $(this).serialize();
 
+            $.ajax({
+                type: "POST",
+                url: "Process/loginProcess.php", // Create this PHP file for login processing
+                data: formData,
+                success: function (response) {
+                    if (response.status === 'success') {
+                        alertify.success(response.message);
+                        // Redirect to a dashboard or a page after successful login if needed
+                    } else {
+                        alertify.error(response.message);
+                    }
+                    $("#logIn").modal("hide");
+                },
+                error: function () {
+                    alertify.error("An error occurred while processing your request.");
+                }
+            });
+        });
+</script>
 </body>
 </html>

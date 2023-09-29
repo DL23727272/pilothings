@@ -178,7 +178,30 @@
    <script>
         alertify.set('notifier', 'position', 'top-right');
 
-        //Log in
+      
+        // Log-in Form Submit
+        $("#logInForm").submit(function (event) {
+            event.preventDefault();
+            var formData = $(this).serialize();
+
+            $.ajax({
+                type: "POST",
+                url: "Process/loginProcess.php",
+                data: formData,
+                success: function (response) {
+                    if (response.status === 'success') {
+                        alertify.success(response.message);
+                        // Redirect to admin.php or perform other actions on success
+                        window.location.href = '../admin/admin.php';
+                    } else {
+                        alertify.error(response.message);
+                    }
+                },
+                error: function () {
+                    alertify.error("An error occurred while processing your request.");
+                }
+            });
+        });
         
         // Arwen Modal Form Submit
         $("#arwenForm").submit(function (event) {
