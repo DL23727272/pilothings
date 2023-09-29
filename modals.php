@@ -286,7 +286,7 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <form class="form" id="logInForm" action="Process/loginProcess.php" method="post">
+          <form class="form" action="Process/loginProcess.php" method="post">
             <h1>Log-in</h1>
 
             <div class="form-group">
