@@ -227,15 +227,15 @@
 
         
         $("#contactForms").submit(function(e) {
-            e.preventDefault(); // Prevent the default form submission
+            e.preventDefault(); 
 
-            // Get form data using correct selectors
+          
             var name = $("input[name='name']").val();
             var email = $("input[name='email']").val();
             var subject = $("input[name='subject']").val();
             var message = $("textarea[name='message']").val();
 
-            // Create a data object to send to the server
+           
             var data = {
                 name: name,
                 email: email,
@@ -243,18 +243,18 @@
                 message: message
             };
 
-            // Send the data to the server using AJAX
+            
             $.ajax({
                 type: "POST",
-                url: "contactForm.php", // Correct URL for your server
+                url: "contactForm.php", 
                 data: data,
                 success: function(response) {
-                    // Handle the response from the server using Alertify.js
+                    
                     if (response.status === 'success') {
-                        alertify.success(response.message); // Display success message
-                        $("#contactForms")[0].reset(); // Clear the form
+                        alertify.success(response.message); 
+                        $("#contactForms")[0].reset(); 
                     } else {
-                        alertify.error(response.message); // Display error message
+                        alertify.error(response.message); 
                     }
                 },
                 error: function(xhr, status, error) {
