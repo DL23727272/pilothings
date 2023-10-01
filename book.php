@@ -247,7 +247,7 @@
         $(document).ready(function() {
         alertify.set('notifier', 'position', 'top-right');
 
-        // Contact Form
+        
         $("#contactForms").submit(function(e) {
             e.preventDefault(); // Prevent the default form submission
 
