@@ -9,14 +9,21 @@
         <div class="modal-body">
           <form class="form"  method="post"  id="arwenForm">
             <h1 class="display-3"><i class="fa-solid fa-user"></i> Arwen</h1>
-            <p class="lead">Please fill in the details to book an appointment with Barber Arwen:</p>
-            <div class="input-group input-group-sm mb-3">
-              <span class="input-group-text" id="inputGroup-sizing-sm">Check-in Date</span>
+            <p class="lead fs-6">Please fill in the details to book an appointment with Barber Arwen:</p>
+
+            <div class="d-flex flex-column">
+              <h1 class="lead fs-6"><i class="fa-solid fa-user-tie"></i> Your Name</h1>
+              <input type="text" id="name1" name="fname" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" required>
+            </div>
+
+            <div class="d-flex justify-content-between mt-2 mb-2">
+            <div class="d-flex flex-column" style="width: 50%;">
+              <h1 class="lead fs-6"><i class="fa-solid fa-calendar-days"></i> Check-in Date</h1>
               <input type="date" id="check-in-Date" name="dateIn" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" required>
             </div>
 
-            <div class="input-group input-group-sm mb-3">
-              <label class="input-group-text" for="inputGroupSelect01">Check-in Time (Hour)</label>
+            <div class="d-flex flex-column" style="width: 49%;">
+              <h1 class="lead fs-6"><i class="fa-solid fa-clock"></i> Check-in Time (Hour)</h1>
               <select class="form-select" id="inputGroupSelect01" name="timeIn">
                 <option disabled selected value="">Choose an hour...</option>
                 <option value="09:00:00">9:00 AM</option>
@@ -28,14 +35,10 @@
                 <option value="16:00:00">4:00 PM</option>
               </select>
             </div>
-
-            <div class="input-group input-group-sm mb-3">
-              <span class="input-group-text" id="inputGroup-sizing-sm">Your Name</span>
-              <input type="text" id="name1" name="fname" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" required>
             </div>
 
-            <div class="input-group input-group-sm mb-3">
-              <label class="input-group-text" for="inputGroupSelect01">Select Services: </label>
+            <div class="d-flex flex-column">
+              <h1 class="lead fs-6"><i class="fa-solid fa-bell-concierge"></i> Select Services</h1>
               <select class="form-select" id="inputGroupSelect01" name="serviceType">
                 <option disabled selected value="">Choose a service...</option>
                 <option value="Haircut">Haircut</option>
@@ -67,13 +70,20 @@
           <form class="form"  method="post"  id="allenForm">
             <h1 class="display-3"><i class="fa-solid fa-user"></i> Allen</h1>
             <p class="lead">Please fill in the details to book an appointment with Barber Allen:</p>
-            <div class="input-group input-group-sm mb-3">
-              <span class="input-group-text" id="inputGroup-sizing-sm">Check-in Date</span>
+
+            <div class="d-flex flex-column">
+              <h1 class="lead fs-6"><i class="fa-solid fa-user-tie"></i> Your Name</h1>
+              <input type="text" id="name1" name="fname" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" required>
+            </div>
+
+            <div class="d-flex justify-content-between mt-2 mb-2">
+            <div class="d-flex flex-column" style="width: 50%;">
+              <h1 class="lead fs-6"><i class="fa-solid fa-calendar-days"></i> Check-in Date</h1>
               <input type="date" id="check-in-Date" name="dateIn" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" required>
             </div>
 
-            <div class="input-group input-group-sm mb-3">
-              <label class="input-group-text" for="inputGroupSelect01">Check-in Time (Hour)</label>
+            <div class="d-flex flex-column" style="width: 49%;">
+              <h1 class="lead fs-6"><i class="fa-solid fa-clock"></i> Check-in Time (Hour)</h1>
               <select class="form-select" id="inputGroupSelect01" name="timeIn">
                 <option disabled selected value="">Choose an hour...</option>
                 <option value="09:00:00">9:00 AM</option>
@@ -85,14 +95,10 @@
                 <option value="16:00:00">4:00 PM</option>
               </select>
             </div>
-
-            <div class="input-group input-group-sm mb-3">
-              <span class="input-group-text" id="inputGroup-sizing-sm">Your Name</span>
-              <input type="text" id="name1" name="fname" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" required>
             </div>
 
-            <div class="input-group input-group-sm mb-3">
-              <label class="input-group-text" for="inputGroupSelect01">Select Services: </label>
+            <div class="d-flex flex-column">
+              <h1 class="lead fs-6"><i class="fa-solid fa-bell-concierge"></i> Select Services</h1>
               <select class="form-select" id="inputGroupSelect01" name="serviceType">
                 <option disabled selected value="">Choose a service...</option>
                 <option value="Haircut">Haircut</option>
@@ -101,7 +107,6 @@
                 <option value="Hair styling">Hair styling</option>
               </select>
             </div>
-
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -124,13 +129,19 @@
           <form class="form"  method="post"  id="ramilForm">
             <h1 class="display-3"><i class="fa-solid fa-user"></i> Ramil</h1>
             <p class="lead">Please fill in the details to book an appointment with Barber Ramil:</p>
-            <div class="input-group input-group-sm mb-3">
-              <span class="input-group-text" id="inputGroup-sizing-sm">Check-in Date</span>
+            <div class="d-flex flex-column">
+              <h1 class="lead fs-6"><i class="fa-solid fa-user-tie"></i> Your Name</h1>
+              <input type="text" id="name1" name="fname" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" required>
+            </div>
+
+            <div class="d-flex justify-content-between mt-2 mb-2">
+            <div class="d-flex flex-column" style="width: 50%;">
+              <h1 class="lead fs-6"><i class="fa-solid fa-calendar-days"></i> Check-in Date</h1>
               <input type="date" id="check-in-Date" name="dateIn" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" required>
             </div>
 
-            <div class="input-group input-group-sm mb-3">
-              <label class="input-group-text" for="inputGroupSelect01">Check-in Time (Hour)</label>
+            <div class="d-flex flex-column" style="width: 49%;">
+              <h1 class="lead fs-6"><i class="fa-solid fa-clock"></i> Check-in Time (Hour)</h1>
               <select class="form-select" id="inputGroupSelect01" name="timeIn">
                 <option disabled selected value="">Choose an hour...</option>
                 <option value="09:00:00">9:00 AM</option>
@@ -142,14 +153,10 @@
                 <option value="16:00:00">4:00 PM</option>
               </select>
             </div>
-
-            <div class="input-group input-group-sm mb-3">
-              <span class="input-group-text" id="inputGroup-sizing-sm">Your Name</span>
-              <input type="text" id="name1" name="fname" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" required>
             </div>
 
-            <div class="input-group input-group-sm mb-3">
-              <label class="input-group-text" for="inputGroupSelect01">Select Services: </label>
+            <div class="d-flex flex-column">
+              <h1 class="lead fs-6"><i class="fa-solid fa-bell-concierge"></i> Select Services</h1>
               <select class="form-select" id="inputGroupSelect01" name="serviceType">
                 <option disabled selected value="">Choose a service...</option>
                 <option value="Haircut">Haircut</option>
@@ -158,7 +165,6 @@
                 <option value="Hair styling">Hair styling</option>
               </select>
             </div>
-
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
