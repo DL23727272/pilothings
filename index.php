@@ -74,7 +74,7 @@
 
 <!--Navbar-->
 
-<nav class="navbar navbar-expand-lg bg-white sticky-top shadow p-3 mb-5 ">
+<nav class="navbar navbar-expand-lg bg-white sticky-top shadow p-3 mb-5">
   <div class="container-sm">
     <img src="img/paesano_logo.jpg" id="img"/>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -91,9 +91,10 @@
 </nav>
 
 <!--Main Content-->
+
 <div class="container-sm d-sm-flex flex-sm-column flex-md-row align-items-md-center">
     <div class="p-2">
-        <h1 class="h1">Welcome to Paesano Barber Shop – Where Style Meets Tradition! </h1>
+        <h1 class="display-6 fw-medium">Welcome to Paesano Barber Shop – Where Style Meets Tradition! </h1>
         <p class="lead mt-3 mb-3">Step into a world of timeless grooming and a blend of contemporary trends at Paesano Barber Shop. We're not just a barber shop; we're a destination for the modern gentleman seeking the perfect grooming experience. Discover the artistry of our skilled barbers and immerse yourself in an ambiance that exudes sophistication and classic charm.</p>
         <div class="d-sm-flex flex-sm-column flex-md-row justify-content-sm-around justify-content-md-start">
             <div class="m-2"><i class="fa-brands fa-2xl fa-square-twitter" style="color: #0D6EFD"></i> <a href="#" class="link-underline-dark link-dark link-offset-2">Twitter</a></div>
@@ -123,12 +124,9 @@
     </div>
 </div>
 
-    </div>
-</div>
-
 <div class="d-sm-flex flex-column container-sm mt-5 mb-5">
     <div class="p-2">
-        <h1 class="h1">✂️ Book Your Appointment – Unleash Your Style! </h1>
+        <h1 class="display-6 fw-medium">Book Your Appointment – Unleash Your Style! </h1>
         <p class="lead mt-3 mb-3">
         Ready to elevate your grooming game? Booking an appointment at Paesano Barber Shop is a breeze. Simply select a date and time that suits you best, and let our master barbers work their magic.
         </p>

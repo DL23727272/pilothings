@@ -1,25 +1,36 @@
 <?php
-$name = $_POST['name'];
-$visitor_email = $_POST['email'];
-$subject = $_POST['subject'];
-$message = $_POST['message'];
+    header('Content-Type: application/json');
 
-$email_from = '$visitor_email';
+    $name = $_POST['name'];
+    $visitor_email = $_POST['email'];
+    $subject = $_POST['subject'];
+    $message = $_POST['message'];
 
-$email_subject = 'New Form Submission';
+    $email_from = '$visitor_email';
 
-$email_body = "User Name: $name.\n".
-              "User Email: $visitor_email.\n".
-              "Subject: $subject.\n".
-              "User Message: $message .\n";
+    $email_subject = 'New Form Submission';
 
-$to = 'paesanosystem@gmail.com';
+    $email_body = "User Name: $name.\n".
+                "User Email: $visitor_email.\n".
+                "Subject: $subject.\n".
+                "User Message: $message.\n";
 
-$headers ="From: $email_from \r\n";
+    $to = 'paesanosystem@gmail.com';
 
-$headers .= "Reply-To: $visitor_email \r\n";
+    $headers = "From: $email_from \r\n";
+    $headers .= "Reply-To: $visitor_email \r\n";
 
-mail($to, $email_subject, $email_body, $headers);
+    if (mail($to, $email_subject, $email_body, $headers)) {
+        $response = [
+            'status' => 'success',
+            'message' => 'Message sent successfully!'
+        ];
+    } else {
+        $response = [
+            'status' => 'error',
+            'message' => 'Failed to send message.'
+        ];
+    }
 
-header("Location: index.php");
+    echo json_encode($response);
 ?>

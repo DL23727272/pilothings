@@ -23,6 +23,12 @@
         .nav-link{
             cursor: pointer;
         }
+        .customer{
+            width: 50px;
+            height: 50px;
+            border-radius: 100%;
+            border: 2px solid black;
+        }
     </style>
 </head>
 <body>
@@ -37,8 +43,8 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
-        <a class="nav-link active" aria-current="page" href="index.php">Home</a>
-        <a class="nav-link" href="book.php">Book</a>
+        <a class="nav-link" href="index.php">Home</a>
+        <a class="nav-link active" aria-current="page" href="book.php">Book</a>
         <a class="nav-link" data-bs-toggle="modal" data-bs-target="#logIn">Log-in</a>
       </div>
     </div>
@@ -49,23 +55,23 @@
 <?php include 'modals.php'; ?>
 
 <div class="d-sm-flex flex-column container-sm mt-5 mb-5">
-    <div class="p-2">
-        <h1 class="h1">✂️ Book Your Appointment – Unleash Your Style! ✂️</h1>
-        <p class="lead">
+    <div class="">
+        <h1 class="display-6 fw-medium">Book Your Appointment – Unleash Your Style!</h1>
+        <p class="lead mt-3">
         Ready to elevate your grooming game? Booking an appointment at Paesano Barber Shop is a breeze. Simply select a date and time that suits you best, and let our master barbers work their magic.
         </p>
     </div>
     <div class="container-sm">
-        <div class="row row-cols-sm-2 row-cols-md-4 justify-content-sm-center">
-        <div class="card m-2">
-            <img src="img/img3.jpg" class="card-img-top img-fluid" alt="...">
+        <div class="row row-cols-sm-2 row-cols-md-4 justify-content-sm-center justify-content-center">
+        <div class="card m-2" style="width: 20rem;">
+            <img src="img/img3.jpg" alt="...">
             <div class="card-body">
                 <h5 class="card-title"><i class="fa-regular fa-user"></i> Arwen</h5>
                 <p class="card-text lead-sm">Allen Barber is committed to delivering top-notch hairstyling services that align with your personal style and enhance your confidence. Step into our salon and experience the artistry of our skilled professionals.</p>
                 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#barber1">Barber 1</button>
             </div>
         </div>
-        <div class="card m-2">
+        <div class="card m-2" style="width: 20rem;">
             <img src="img/img3.jpg" class="card-img-top img-fluid" alt="...">
             <div class="card-body">
                 <h5 class="card-title"><i class="fa-regular fa-user"></i> Allen</h5>
@@ -73,7 +79,7 @@
                 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#barber2">Barber 2</button>
             </div>
         </div>
-        <div class="card m-2">
+        <div class="card m-2" style="width: 20rem;">
             <img src="img/img3.jpg" class="card-img-top img-fluid" alt="...">
             <div class="card-body">
                 <h5 class="card-title"><i class="fa-regular fa-user"></i> Ramil</h5>
@@ -106,6 +112,65 @@
             </div>
         </div>
     -->
+    </div>
+
+    <!--Testimonials-->
+    <div class="container-sm mt-5">
+        <h1 class="display-6 mb-3 fw-medium">Raving Reviews: Satisfied Clients Share Their Paesano Barber Shop Experience</h1>
+        <div class="d-sm-flex flex-sm-column flex-md-row">
+            <div class="card m-2">
+                <div class="card-body">
+                    <div class="d-flex">
+                        <img src="img/paesano_logo.jpg" class="customer" alt="" srcset="">
+                        <div class="px-2">
+                            <h5 class="card-title">Manilyn Lopez Rivarez</h5>
+                            <p class="card-subtitle"><i class="fa-regular fa-thumbs-up fa-bounce"></i> Satisfied Customer</p>
+                        </div>
+                    </div>
+                    <div>
+                        <p class="lead mt-3">
+                            Highly recommended👍
+                            Customer service oriented and will surely get what you pay for.😊
+                            Great job Paesano!😊
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="card m-2">
+                <div class="card-body">
+                    <div class="d-flex">
+                        <img src="img/paesano_logo.jpg" class="customer" alt="" srcset="">
+                        <div class="px-2">
+                            <h5 class="card-title">Divo Galace Valois</h5>
+                            <p class="card-subtitle"><i class="fa-regular fa-thumbs-up fa-bounce"></i> Satisfied Customer</p>
+                        </div>
+                    </div>
+                    <div>
+                        <p class="lead mt-3">
+                            Commendable service. For those lads out there who want trendy hairstyle, you better visit this one. Two thumbs-up.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="card m-2">
+                <div class="card-body">
+                    <div class="d-flex">
+                        <img src="img/paesano_logo.jpg" class="customer" alt="" srcset="">
+                        <div class="px-2">
+                            <h5 class="card-title"> Mark Jeriel Cabalbag</h5>
+                            <p class="card-subtitle"><i class="fa-regular fa-thumbs-up fa-bounce"></i> Satisfied Customer</p>
+                        </div>
+                    </div>
+                    <div>
+                        <p class="lead mt-3">
+                            Highly recommended👍
+                            Customer service oriented and will surely get what you pay for.😊
+                            Great job Paesano!😊
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     </div>
 </div>
@@ -146,8 +211,8 @@
                 </div>
             </div>
         </div>
-        <div class="d-sm-flex flex-sm-column">
-            <form action="contactForm.php" method="post">
+        <div class="d-sm-flex flex-sm-column" id="contact">
+            <form action="contactForm.php" method="post" id="contactForms">
                 <h1 class="h6">Contact Us!</h1>
                 <div class="input-group input-group-sm mb-3">
                     <span class="input-group-text" id="inputGroup-sizing-sm">Name</span>
@@ -178,7 +243,49 @@
    <script>
         alertify.set('notifier', 'position', 'top-right');
 
-        //Log in
+        // Contact Form
+        $(document).ready(function() {
+        alertify.set('notifier', 'position', 'top-right');
+
+        // Contact Form
+        $("#contactForms").submit(function(e) {
+            e.preventDefault(); // Prevent the default form submission
+
+            // Get form data using correct selectors
+            var name = $("input[name='name']").val();
+            var email = $("input[name='email']").val();
+            var subject = $("input[name='subject']").val();
+            var message = $("textarea[name='message']").val();
+
+            // Create a data object to send to the server
+            var data = {
+                name: name,
+                email: email,
+                subject: subject,
+                message: message
+            };
+
+            // Send the data to the server using AJAX
+            $.ajax({
+                type: "POST",
+                url: "contactForm.php", // Correct URL for your server
+                data: data,
+                success: function(response) {
+                    // Handle the response from the server using Alertify.js
+                    if (response.status === 'success') {
+                        alertify.success(response.message); // Display success message
+                        $("#contactForms")[0].reset(); // Clear the form
+                    } else {
+                        alertify.error(response.message); // Display error message
+                    }
+                },
+                error: function(xhr, status, error) {
+                    console.error("AJAX Error: " + status + " - " + error);
+                    alertify.error("An error occurred while processing your request.");
+                }
+            });
+        });
+    });
         
         // Arwen Modal Form Submit
         $("#arwenForm").submit(function (event) {
