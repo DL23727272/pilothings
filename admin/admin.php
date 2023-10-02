@@ -167,7 +167,7 @@ function displayAppointments($connect, $barberName) {
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script>
              alertify.set('notifier','position', 'top-right');
-    alertify.success('Welcome, admin!' );
+             alertify.success('Welcome, admin!' );
         </script>
     </body>
 </html>

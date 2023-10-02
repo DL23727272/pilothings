@@ -299,6 +299,7 @@
                     if (response.status === 'success') {
                         alertify.success(response.message);
                         $("#barber1").modal("hide");
+                        $("#arwenForm")[0].reset(); 
                     } else {
                         alertify.error(response.message);
                     }
@@ -322,6 +323,7 @@
                     if (response.status === 'success') {
                         alertify.success(response.message);
                         $("#barber2").modal("hide");
+                        $("#allenForm")[0].reset(); 
                     } else {
                         alertify.error(response.message);
                     }
@@ -345,6 +347,7 @@
                     if (response.status === 'success') {
                         alertify.success(response.message);
                         $("#barber3").modal("hide");
+                        $("#ramilForm")[0].reset(); 
                     } else {
                         alertify.error(response.message);
                     }
