@@ -64,7 +64,7 @@
     <div class="container-sm">
         <div class="row row-cols-sm-2 row-cols-md-4 justify-content-sm-center justify-content-center">
         <div class="card m-2" style="width: 20rem;">
-            <img src="img/img3.jpg" alt="...">
+            <img src="img/img3.jpg" class="card-img-top" alt="...">
             <div class="card-body">
                 <h5 class="card-title"><i class="fa-regular fa-user"></i> Arwen</h5>
                 <p class="card-text lead-sm">Allen Barber is committed to delivering top-notch hairstyling services that align with your personal style and enhance your confidence. Step into our salon and experience the artistry of our skilled professionals.</p>
@@ -72,7 +72,7 @@
             </div>
         </div>
         <div class="card m-2" style="width: 20rem;">
-            <img src="img/img3.jpg" class="card-img-top img-fluid" alt="...">
+            <img src="img/img3.jpg" class="card-img-top" alt="...">
             <div class="card-body">
                 <h5 class="card-title"><i class="fa-regular fa-user"></i> Allen</h5>
                 <p class="card-text lead-sm">Step into Ramill Barber and embark on a journey of personalized grooming and styling. Our expert barbers pay meticulous attention to detail, ensuring each visit leaves you feeling rejuvenated and looking impeccably sharp.</p>
@@ -80,7 +80,7 @@
             </div>
         </div>
         <div class="card m-2" style="width: 20rem;">
-            <img src="img/img3.jpg" class="card-img-top img-fluid" alt="...">
+            <img src="img/img3.jpg" class="card-img-top" alt="...">
             <div class="card-body">
                 <h5 class="card-title"><i class="fa-regular fa-user"></i> Ramil</h5>
                 <p class="card-text lead-sm">Arwen Barber is where style meets expertise. Our dedicated team of barbers combines skill and passion to create hairstyles that define your individuality. Experience the epitome of grooming in a welcoming and comfortable environment.</p>
