@@ -154,7 +154,7 @@ function displayAppointments($connect, $barberName) {
                 <div class="card-body d-flex flex-column align-items-end">
                     <div>
                     <?php 
-                       include 'D:\xampp\htdocs\Appointment\Process\myConnection.php';
+                        include 'D:\xampp\htdocs\Appointment\Process\myConnection.php';
                 
                         $currentDate = date("Y-m-d");
                 
@@ -178,7 +178,7 @@ function displayAppointments($connect, $barberName) {
                 <div class="card-body d-flex flex-column align-items-end">
                     <div>
                     <?php 
-                      include 'D:\xampp\htdocs\Appointment\Process\myConnection.php';
+                        include 'D:\xampp\htdocs\Appointment\Process\myConnection.php';
                 
                         $currentDate = date("Y-m-d");
                 
