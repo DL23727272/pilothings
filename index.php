@@ -7,6 +7,9 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <title>Home | Paesano</title>
+     <!-- Alertify sakit sa ulo -->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css"/>
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/bootstrap.min.css"/>
     <script src="jquery-3.6.1.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
@@ -189,8 +192,8 @@
                 </div>
             </div>
         </div>
-        <div class="d-sm-flex flex-sm-column">
-            <form action="contactForm.php" method="post">
+        <div class="d-sm-flex flex-sm-column" id="contact">
+            <form action="contactForm.php" method="post" id="contactForms">
                 <h1 class="h6">Contact Us!</h1>
                 <div class="input-group input-group-sm mb-3">
                     <span class="input-group-text" id="inputGroup-sizing-sm">Name</span>
@@ -214,5 +217,53 @@
     </div>
 </div>
 
+<script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>
+    // Contact Form
+    $(document).ready(function() {
+        alertify.set('notifier', 'position', 'top-right');
+
+        
+        $("#contactForms").submit(function(e) {
+            e.preventDefault(); 
+
+          
+            var name = $("input[name='name']").val();
+            var email = $("input[name='email']").val();
+            var subject = $("input[name='subject']").val();
+            var message = $("textarea[name='message']").val();
+
+           
+            var data = {
+                name: name,
+                email: email,
+                subject: subject,
+                message: message
+            };
+
+            
+            $.ajax({
+                type: "POST",
+                url: "contactForm.php", 
+                data: data,
+                success: function(response) {
+                    
+                    if (response.status === 'success') {
+                        alertify.success(response.message); 
+                        $("#contactForms")[0].reset(); 
+                    } else {
+                        alertify.error(response.message); 
+                    }
+                },
+                error: function(xhr, status, error) {
+                    console.error("AJAX Error: " + status + " - " + error);
+                    alertify.error("An error occurred while processing your request.");
+                }
+            });
+        });
+    });
+</script>
 </body>
 </html>

@@ -223,56 +223,8 @@ function displayAppointments($connect, $barberName) {
         <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script>
-            function updateChart() {
-                $.ajax({
-                    url: 'chart.php',
-                    type: 'GET',
-                    dataType: 'json',
-                    success: function(data) {
-                        var ctx = document.getElementById('myChart').getContext('2d');
-                        var chart = new Chart(ctx, {
-                            type: 'bar',
-                            data: {
-                                labels: ['Arwen', 'Allen', 'Ramil'],
-                                datasets: [{
-                                    label: '# of Appointments',
-                                    data: [data.arwen, data.allen, data.ramil],
-                                    backgroundColor: [
-                                        'rgba(255, 99, 132, 0.5)',
-                                        'rgba(54, 162, 235, 0.5)',
-                                        'rgba(255, 206, 86, 0.5)'
-                                    ],
-                                    borderColor: [
-                                        'rgba(255, 99, 132, 1)',
-                                        'rgba(54, 162, 235, 1)',
-                                        'rgba(255, 206, 86, 1)'
-                                    ],
-                                    borderWidth: 1
-                                }]
-                            },
-                            options: {
-                                scales: {
-                                    y: {
-                                        beginAtZero: true
-                                    }
-                                }
-                            }
-                        });
-                    },
-                    error: function(xhr, status, error) {
-                        console.error('Error fetching data:', error);
-                    }
-                });
-            }
-
-            alertify.set('notifier', 'position', 'top-right');
-            alertify.success('Welcome, admin!');
-
-            // Initial chart update
-            updateChart();
-
-            // Refresh the chart every 5 seconds
-            setInterval(updateChart, 5000);
+             alertify.set('notifier','position', 'top-right');
+    alertify.success('Welcome, admin!' );
         </script>
     </body>
 </html>
