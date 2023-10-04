@@ -1,5 +1,5 @@
 <?php
-include 'C:\xampp\htdocs\pilothings\Process\myConnection.php';
+include 'D:\xampp\htdocs\Appointment\Process\myConnection.php';
 
 $data = array(
     'arwen' => getAppointmentCount($connect, 'arwen'),

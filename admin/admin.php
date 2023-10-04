@@ -1,6 +1,6 @@
 <?php
 session_start();
-include 'C:\xampp\htdocs\pilothings\Process\myConnection.php';
+include 'D:\xampp\htdocs\Appointment\Process\myConnection.php';
 
 function totalAppoitments($connect, $barberName) {
     $currentDate = date("Y-m-d");
@@ -87,7 +87,7 @@ function displayAppointments($connect, $barberName) {
 
         <nav class="navbar bg-body-tertiary fixed-top shadow p-3 mb-5 bg-body-tertiary rounded">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#"><i class="fa-solid fa-users-line"></i> Admin</a>
+            <a class="navbar-brand" href="admin.php"><i class="fa-solid fa-users-line"></i> Admin</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
             </button>
@@ -130,7 +130,7 @@ function displayAppointments($connect, $barberName) {
                 <div class="card-body d-flex flex-column align-items-end">
                     <div>
                     <?php 
-                        include 'C:\xampp\htdocs\pilothings\Process\myConnection.php';
+                        include 'D:\xampp\htdocs\Appointment\Process\myConnection.php';
                 
                         $currentDate = date("Y-m-d");
                 
@@ -154,7 +154,7 @@ function displayAppointments($connect, $barberName) {
                 <div class="card-body d-flex flex-column align-items-end">
                     <div>
                     <?php 
-                        include 'C:\xampp\htdocs\pilothings\Process\myConnection.php';
+                        include 'D:\xampp\htdocs\Appointment\Process\myConnection.php';
                 
                         $currentDate = date("Y-m-d");
                 
@@ -178,7 +178,7 @@ function displayAppointments($connect, $barberName) {
                 <div class="card-body d-flex flex-column align-items-end">
                     <div>
                     <?php 
-                        include 'C:\xampp\htdocs\pilothings\Process\myConnection.php';
+                        include 'D:\xampp\htdocs\Appointment\Process\myConnection.php';
                 
                         $currentDate = date("Y-m-d");
                 
@@ -223,7 +223,7 @@ function displayAppointments($connect, $barberName) {
         <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script>
-             function updateChart() {
+            function updateChart() {
                 $.ajax({
                     url: 'chart.php',
                     type: 'GET',
