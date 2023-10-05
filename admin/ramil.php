@@ -101,8 +101,9 @@
                       </a>
                     </td>
                     <td>
-                        <a href="delete.php?id=<?php echo $row ["id"]; ?>">
-                        <button type="button" class="btn btn-warning">Delete</button></a>
+                    <a href="#" onclick="deleteAppointment(<?php echo $row["id"]; ?>, 'ramil');">
+                        <button type='button' class='btn btn-warning'>Delete</button>
+                    </a>
                     </td>
                     
                 </tr>
@@ -120,6 +121,31 @@
         <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script>
+            function deleteAppointment(id, barberName) {
+                var confirmMessage = `Are you sure you want to delete appointment with ID ${id}?`;
+
+                alertify.confirm(confirmMessage, function () {
+                    $.ajax({
+                        url: `../Process/deleteProcess.php?id=${id}&barber_name=${barberName}`,
+                        type: 'GET',
+                        dataType: 'json',
+                        success: function (response) {
+                            if (response.success) {
+                                alertify.success(response.message);
+
+                                setTimeout(function () {
+                                    location.reload();
+                                }, 1000); 
+                            } else {
+                                alertify.error(response.message);
+                            }
+                        },
+                    });
+                }, function () {
+                   
+                });
+}
+
              alertify.set('notifier','position', 'top-right');
              alertify.success('Welcome, Ramil!' );
         </script>

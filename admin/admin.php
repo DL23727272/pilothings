@@ -2,6 +2,9 @@
 session_start();
 include 'D:\xampp\htdocs\Appointment\Process\myConnection.php';
 
+
+$barberNames = ['arwen', 'allen', 'ramil'];
+
 function totalAppoitments($connect, $barberName) {
     $currentDate = date("Y-m-d");
 
@@ -53,7 +56,7 @@ function displayAppointments($connect, $barberName) {
             echo "</a>";
             echo "</td>";
             echo "<td>";
-            echo "<a href='delete.php?id={$row["id"]}'>";
+            echo "<a href='#' onclick=\"deleteAppointment({$row["id"]}, '{$barberName}');\">";
             echo "<button type='button' class='btn btn-warning'>Delete</button></a>";
             echo "</td>";
             echo "</tr>";
@@ -134,34 +137,10 @@ function displayAppointments($connect, $barberName) {
                 
                         $currentDate = date("Y-m-d");
                 
-                        $query = "SELECT COUNT(*) AS appointment_count FROM allen WHERE checkin_date = '$currentDate'";
-                        $result = mysqli_query($connect, $query);
-                
-                        $totalAppointmentsToday = 0; // Default value if there's an error or no appointments
-                        if ($result) {
-                            $row = mysqli_fetch_assoc($result);
-                            $totalAppointmentsToday = $row['appointment_count'];
-                        }
-                    ?>
-                    <p>Total appointments today: <?php echo $totalAppointmentsToday; ?></p>
-                    </div>
-                    <div>
-                        <h6 class="h5"><i class="fa-solid fa-user-check"></i> Allen Clients</h6>
-                    </div>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-body d-flex flex-column align-items-end">
-                    <div>
-                    <?php 
-                        include 'D:\xampp\htdocs\Appointment\Process\myConnection.php';
-                
-                        $currentDate = date("Y-m-d");
-                
                         $query = "SELECT COUNT(*) AS appointment_count FROM arwen WHERE checkin_date = '$currentDate'";
                         $result = mysqli_query($connect, $query);
                 
-                        $totalAppointmentsToday = 0; // Default value if there's an error or no appointments
+                        $totalAppointmentsToday = 0; 
                         if ($result) {
                             $row = mysqli_fetch_assoc($result);
                             $totalAppointmentsToday = $row['appointment_count'];
@@ -182,10 +161,34 @@ function displayAppointments($connect, $barberName) {
                 
                         $currentDate = date("Y-m-d");
                 
+                        $query = "SELECT COUNT(*) AS appointment_count FROM allen WHERE checkin_date = '$currentDate'";
+                        $result = mysqli_query($connect, $query);
+                
+                        $totalAppointmentsToday = 0; 
+                        if ($result) {
+                            $row = mysqli_fetch_assoc($result);
+                            $totalAppointmentsToday = $row['appointment_count'];
+                        }
+                    ?>
+                    <p>Total appointments today: <?php echo $totalAppointmentsToday; ?></p>
+                    </div>
+                    <div>
+                        <h6 class="h5"><i class="fa-solid fa-user-check"></i> Allen Clients</h6>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body d-flex flex-column align-items-end">
+                    <div>
+                    <?php 
+                        include 'D:\xampp\htdocs\Appointment\Process\myConnection.php';
+                
+                        $currentDate = date("Y-m-d");
+                
                         $query = "SELECT COUNT(*) AS appointment_count FROM ramil WHERE checkin_date = '$currentDate'";
                         $result = mysqli_query($connect, $query);
                 
-                        $totalAppointmentsToday = 0; // Default value if there's an error or no appointments
+                        $totalAppointmentsToday = 0; 
                         if ($result) {
                             $row = mysqli_fetch_assoc($result);
                             $totalAppointmentsToday = $row['appointment_count'];
@@ -202,7 +205,15 @@ function displayAppointments($connect, $barberName) {
 
             <div class="container-fluid d-flex justify-content-start">
             <div style="width: 500px; height: 300px;">
-                <h1 class="h4 mt-4">Total Clients</h1>
+                <h1 class="h4 mt-4">Total Clients Today:
+                <?php
+                    $totalAppointments = 0; 
+                    foreach ($barberNames as $barberName) {
+                        $totalAppointments += totalAppoitments($connect, $barberName);
+                    }
+                    echo $totalAppointments;
+                ?>
+                </h1>
                 <canvas id="myChart" width="200" height="100"></canvas>
             </div>
             </div>
@@ -219,12 +230,86 @@ function displayAppointments($connect, $barberName) {
                 // Call the function for Ramil
                 displayAppointments($connect, "ramil");
             ?>
-                        
+                     
+        <!------ CHART ------>
         <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script>
-             alertify.set('notifier','position', 'top-right');
-             alertify.success('Welcome, admin!' );
+            function deleteAppointment(id, barberName) {
+                var confirmMessage = `Are you sure you want to delete appointment with ID ${id}?`;
+
+                alertify.confirm(confirmMessage, function () {
+                    $.ajax({
+                        url: `../Process/deleteProcess.php?id=${id}&barber_name=${barberName}`,
+                        type: 'GET',
+                        dataType: 'json',
+                        success: function (response) {
+                            if (response.success) {
+                                alertify.success(response.message);
+
+                                setTimeout(function () {
+                                    location.reload();
+                                }, 1000); 
+                            } else {
+                                alertify.error(response.message);
+                            }
+                        },
+                    });
+                }, function () {
+                    // User clicked the "Cancel" button, do nothing
+                });
+            }
+
+            function updateChart() {
+                $.ajax({
+                    url: 'chart.php',
+                    type: 'GET',
+                    dataType: 'json',
+                    success: function(data) {
+                        var ctx = document.getElementById('myChart').getContext('2d');
+                        var chart = new Chart(ctx, {
+                            type: 'bar',
+                            data: {
+                                labels: ['Arwen', 'Allen', 'Ramil'],
+                                datasets: [{
+                                    label: '# of Appointments',
+                                    data: [data.arwen, data.allen, data.ramil],
+                                    backgroundColor: [
+                                        'rgba(255, 99, 132, 0.5)',
+                                        'rgba(54, 162, 235, 0.5)',
+                                        'rgba(255, 206, 86, 0.5)'
+                                    ],
+                                    borderColor: [
+                                        'rgba(255, 99, 132, 1)',
+                                        'rgba(54, 162, 235, 1)',
+                                        'rgba(255, 206, 86, 1)'
+                                    ],
+                                    borderWidth: 1
+                                }]
+                            },
+                            options: {
+                                scales: {
+                                    y: {
+                                        beginAtZero: true
+                                    }
+                                }
+                            }
+                        });
+                    },
+                    error: function(xhr, status, error) {
+                        console.error('Error fetching data:', error);
+                    }
+                });
+            }
+
+            alertify.set('notifier', 'position', 'top-right');
+            alertify.success('Welcome, admin!');
+
+            // Initial chart update
+            updateChart();
+
+            // Refresh the chart every 5 seconds
+            setInterval(updateChart, 5000);
         </script>
     </body>
 </html>
